@@ -1,0 +1,11 @@
+
+.car {
+    border-width: 2px;
+    border-style: solid;
+    border-color: #a2f1bc;
+    border-radius: 10px;
+}
+
+.consulta {
+    margin: 25px;
+}

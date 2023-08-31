@@ -1,0 +1,52 @@
+
+<nav class="encabezado">
+    <h1>IHSS</h1>
+</nav>
+
+<div class="contenedor">
+
+    <mat-card class="card">
+
+        <!-- <img mat-card-sm-image src="../../../assets/img/log.jpg"> -->
+        <mat-card-title>IHSS REGISTRATE</mat-card-title>
+        <mat-card-content>
+
+            <div class="row">
+                <mat-form-field class="loginInput">
+                    <mat-label>Ingrese su identificación</mat-label>
+                    <!-- [formControl]="email"  -->
+                    <input matInput placeholder="Identidad, pasaporte" required>
+                    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="row">
+                <mat-form-field class="loginInput">
+                    <mat-label>Ingrese su correo</mat-label>
+                    <!-- [formControl]="email"  -->
+                    <input matInput placeholder="pat@example.com" required>
+                    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                </mat-form-field>
+            </div>
+            
+            <div class="row">
+                <mat-form-field>
+                    <mat-label>Ingrese su contraseña</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'" required>
+                </mat-form-field>
+            </div>
+
+            <div class="row">
+                <mat-form-field>
+                    <mat-label>Verifique su contraseña</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'" required>
+                </mat-form-field>
+            </div>
+
+            <div class="mt-2">
+                <button class="btn btn-success" (click)="registro()">Registrate</button>
+            </div>
+            
+        </mat-card-content>        
+    </mat-card>
+</div>

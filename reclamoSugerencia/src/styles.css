@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.contenedor {
+    margin-left: 8px;
+    width: 600px;
+    height: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.encabezado {
+    text-align: center;
+    background-color: #025418;
+    padding: 10px;
+    clear:both;
+    overflow:auto;
+}
+
+.imgEncabezado {
+    float: left;
+}
+
+.separador {
+    border-top: 5px solid rgb(32, 153, 17);
+}
+
+
+
+
+
+
+    

@@ -1,0 +1,78 @@
+<nav class="encabezado">
+    <div class="imgencabezado"><img mat-card-lg-image src="../../../assets/img/log.jpg"></div>
+    <h1>IHSS</h1>
+</nav>
+
+
+<div class="contenedor">
+
+    <mat-card class="card">
+
+        <mat-card-header>
+            <mat-card-title>IHSS</mat-card-title>
+            <mat-card-subtitle>Instituto hondureño de seguridad social.</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <form class="separador mt-2" [formGroup]="formReclamo" (ngSubmit)= "guardarReclamo()">
+                <div class="row mt-4">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Seleccione su departamento</mat-label>
+                            <input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto" formControlName="departamento">
+                            <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+                                <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                                    {{option.name}}
+                                </mat-option>
+                            </mat-autocomplete>
+                        </mat-form-field>
+                </div>
+
+                <div class="row">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Seleccione su centro de atención</mat-label>
+                            <input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto" formControlName="centro">
+                            <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+                                <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                                    {{option.name}}
+                                </mat-option>
+                            </mat-autocomplete>
+                        </mat-form-field>
+                </div>
+
+                <div class="row">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Seleccione su tipo de solicitud*</mat-label>
+                        <input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto" formControlName="TipoSolicitud">
+                        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+                            <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                                {{option.name}}
+                            </mat-option>
+                        </mat-autocomplete>
+                    </mat-form-field>
+                </div>
+
+                <div class="row mt-2">
+                    <mat-label>Escriba su reclamo o sugerencia.</mat-label>
+                </div>
+
+                <div class="row">
+                    <mat-form-field>
+                        <mat-label></mat-label>
+                        <textarea matInput formControlName="solicitudExpuesta"></textarea>
+                    </mat-form-field>
+                </div>
+
+                <div class="row">
+                    <div class="col-9">
+                        <input type="file">
+                    </div>
+                    <div class="col-3">
+                        <button [disabled]="formReclamo.invalid" type="submit" class="btn btn-success" >Success</button>
+                    </div>
+                </div>
+            </form>
+
+        </mat-card-content>        
+    </mat-card>
+
+
+</div>

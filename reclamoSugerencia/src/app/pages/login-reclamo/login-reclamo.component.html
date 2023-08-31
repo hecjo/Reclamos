@@ -1,0 +1,67 @@
+
+
+<div class="encabezado">
+    <div class="imgEncabezado">
+        <img mat-card-lg-image src="../../../assets/img/logo.jpg">
+    </div>
+</div>
+
+<div class="contenedor">
+
+    <mat-card class="card">
+
+        <mat-card-header>
+            <mat-card-title>IHSS</mat-card-title>
+            <mat-card-subtitle>Instituto hondureño de seguridad social.</mat-card-subtitle>
+            <!-- <img mat-card-sm-image src="../../../assets/img/log.jpg"> -->
+        </mat-card-header>
+
+        <mat-card-content>
+
+            <form class="separador mt-2" [formGroup]="formLogin" (ngSubmit)= "validarLogin()">
+
+                <div class="row">
+                <mat-form-field>
+                    <mat-label>Ingrese su correo</mat-label>
+                    <!-- [formControl]="email"  -->
+                    <input matInput placeholder="pat@example.com" formControlName="correo" required>
+                    <div class="icon" mat-icon-button matSuffix>
+                        <mat-icon fontIcon="mail"></mat-icon>
+                    </div>
+                    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                </mat-form-field>
+                </div>
+
+                <div class="row">
+                <mat-form-field>
+                    <mat-label>Ingrese su contraseña</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'" formControlName="contraseña" required>
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                </mat-form-field>
+                </div>
+
+                <div class="row">
+                <mat-card-actions>                   
+                    <button class="btn btn-success" [disabled]="formLogin.invalid" type="submit"  routerLink="/reclamo">Ingresar</button>                   
+                </mat-card-actions>
+                </div>
+            </form>
+
+            <div class="row mt-2">
+                <div class="col-8">
+                    <span class="consulta">¿No estas registrado?</span>
+                </div>
+                
+                <div class="col-4">
+                    <a href="/registro">Registrate</a>
+                </div>  
+            </div>
+            
+        </mat-card-content>        
+    </mat-card>
+
+
+</div>
