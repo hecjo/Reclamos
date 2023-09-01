@@ -7,9 +7,10 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   templateUrl: './login-reclamo.component.html',
   styleUrls: ['./login-reclamo.component.css']
 })
+
 export class LoginReclamoComponent implements OnInit {
   
-  operation: string = 'correo;'
+  operation: string = 'correo'
   formLogin: FormGroup;
   hide = true;
   email = new FormControl('', [Validators.required, Validators.email]);

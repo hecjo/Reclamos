@@ -16,17 +16,26 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .encabezado {
     text-align: center;
     background-color: #025418;
-    padding: 10px;
+    padding: 20px;
     clear:both;
     overflow:auto;
 }
 
 .imgEncabezado {
+
+    width: 250px;
+    height: 75px;
     float: left;
 }
 
 .separador {
     border-top: 5px solid rgb(32, 153, 17);
+}
+
+.encabezado h1 {
+    font-size: 75px;
+    margin-top: 20px;
+    margin-left: 20px;
 }
 
 

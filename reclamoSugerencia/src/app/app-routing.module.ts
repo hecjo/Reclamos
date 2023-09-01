@@ -4,17 +4,20 @@ import { LoginReclamoComponent } from './pages/login-reclamo/login-reclamo.compo
 import { ReclamoComponent } from './pages/reclamo/reclamo.component';
 import { AdminReclamoComponent } from './pages/admin-reclamo/admin-reclamo.component';
 import { RegistroReclamoComponent } from './pages/registro-reclamo/registro-reclamo.component';
+import { LoginGeneralComponent } from './pages/login-general/login-general.component';
 
 const routes: Routes = [
 
-  {path: '', redirectTo: 'login', pathMatch: 'full'},
+  
+  {path: '', redirectTo: 'logingeneral', pathMatch: 'full'},
+  {path: 'logingeneral', component:LoginGeneralComponent},
   {path:'login', component:LoginReclamoComponent},
   {path:'reclamo', component:ReclamoComponent},
   {path: 'admin', component: AdminReclamoComponent},
   {path: 'registro', component: RegistroReclamoComponent},
 
 
-  {path: '**', redirectTo: 'login', pathMatch: 'full'}
+  {path: '**', redirectTo: 'logingeneral', pathMatch: 'full'}
 
 ];
 

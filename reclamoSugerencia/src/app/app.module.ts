@@ -9,6 +9,7 @@ import { LoginReclamoComponent } from './pages/login-reclamo/login-reclamo.compo
 import { AdminReclamoComponent } from './pages/admin-reclamo/admin-reclamo.component';
 import { RegistroReclamoComponent } from './pages/registro-reclamo/registro-reclamo.component';
 import { SharedModule } from './shared/shared.module';
+import { LoginGeneralComponent } from './pages/login-general/login-general.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SharedModule } from './shared/shared.module';
     ReclamoComponent,
     LoginReclamoComponent,
     AdminReclamoComponent,
-    RegistroReclamoComponent
+    RegistroReclamoComponent,
+    LoginGeneralComponent
   ],
   imports: [
     BrowserModule,

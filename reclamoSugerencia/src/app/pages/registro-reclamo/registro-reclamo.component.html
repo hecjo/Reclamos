@@ -1,52 +1,60 @@
-
-<nav class="encabezado">
+<div class="encabezado">
+    <img class="imgEncabezado" src="../../../assets/img/logo3.jpg">
     <h1>IHSS</h1>
-</nav>
+</div>
 
 <div class="contenedor">
 
     <mat-card class="card">
 
         <!-- <img mat-card-sm-image src="../../../assets/img/log.jpg"> -->
-        <mat-card-title>IHSS REGISTRATE</mat-card-title>
-        <mat-card-content>
 
-            <div class="row">
-                <mat-form-field class="loginInput">
-                    <mat-label>Ingrese su identificación</mat-label>
-                    <!-- [formControl]="email"  -->
-                    <input matInput placeholder="Identidad, pasaporte" required>
-                    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-                </mat-form-field>
-            </div>
+        <mat-card-header>
+            <mat-card-title>Ingrese lo solicitado</mat-card-title>
+        </mat-card-header>
+        
 
-            <div class="row">
-                <mat-form-field class="loginInput">
-                    <mat-label>Ingrese su correo</mat-label>
-                    <!-- [formControl]="email"  -->
-                    <input matInput placeholder="pat@example.com" required>
-                    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-                </mat-form-field>
-            </div>
-            
-            <div class="row">
-                <mat-form-field>
-                    <mat-label>Ingrese su contraseña</mat-label>
-                    <input matInput [type]="hide ? 'password' : 'text'" required>
-                </mat-form-field>
-            </div>
+            <mat-card-content>
 
-            <div class="row">
-                <mat-form-field>
-                    <mat-label>Verifique su contraseña</mat-label>
-                    <input matInput [type]="hide ? 'password' : 'text'" required>
-                </mat-form-field>
-            </div>
+                <form class="separador mt-2" [formGroup]="formRegis" (ngSubmit)="registro()">
 
-            <div class="mt-2">
-                <button class="btn btn-success" (click)="registro()">Registrate</button>
-            </div>
-            
-        </mat-card-content>        
+                    <div class="row">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Ingrese su identificación</mat-label>
+                            <!-- [formControl]="email"  -->
+                            <input matInput formControlName="identificacion" placeholder="Identidad, pasaporte" required>
+                            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="row">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Ingrese su correo</mat-label>
+                            <!-- [formControl]="email"  -->
+                            <input matInput formControlName="correo" placeholder="pat@example.com" required>
+                            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                        </mat-form-field>
+                    </div>
+                    
+                    <div class="row">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Ingrese su contraseña</mat-label>
+                            <input matInput formControlName="contrasena" [type]="hide ? 'password' : 'text'" required>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="row">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Verifique su contraseña</mat-label>
+                            <input matInput formControlName="contrasena1" [type]="hide ? 'password' : 'text'" required>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="row mt-2">
+                        <button [disabled]="formRegis.invalid" type="submit" class="btn btn-success">Registrate</button>
+                    </div>
+                </form>
+                
+            </mat-card-content>        
     </mat-card>
 </div>

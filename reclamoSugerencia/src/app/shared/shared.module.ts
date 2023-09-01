@@ -14,7 +14,8 @@ import {NgFor} from '@angular/common';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatTableModule} from '@angular/material/table';
 
 
 @NgModule({
@@ -31,7 +32,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     FormsModule,
     MatAutocompleteModule,
     ReactiveFormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatTabsModule,
+    MatTableModule
 
   ],
 
@@ -46,7 +49,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     FormsModule,
     MatAutocompleteModule,
     ReactiveFormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatTabsModule,
+    MatTableModule
   ]
 })
 export class SharedModule { }

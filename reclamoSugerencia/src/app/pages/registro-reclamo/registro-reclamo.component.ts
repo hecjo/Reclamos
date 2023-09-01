@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
@@ -8,12 +8,21 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./registro-reclamo.component.css']
 })
 
-export class RegistroReclamoComponent {
-
+export class RegistroReclamoComponent implements OnInit {
   hide = true;
+  formRegis : FormGroup;
   email = new FormControl('', [Validators.required, Validators.email]);
+ 
 
-  constructor(private _snackBar: MatSnackBar) {
+  ngOnInit(): void {}
+
+  constructor(private _snackBar: MatSnackBar, private fb: FormBuilder) {
+    this.formRegis = this.fb.group({
+      identificacion: ['', Validators.required],
+      correo: ['', Validators.required],
+      contrasena: ['', Validators.required],
+      contrasena1: ['', Validators.required]
+    })
   }
 
   getErrorMessage() {
@@ -27,7 +36,7 @@ export class RegistroReclamoComponent {
     this._snackBar.open('¡¡Registro exitoso!!', '',
     {duration: 1500
     });
-
   }
+
 
 }

@@ -1,24 +1,11 @@
 
 
-<div class="encabezado">
-    <div class="imgEncabezado">
-        <img mat-card-lg-image src="../../../assets/img/logo.jpg">
-    </div>
-</div>
 
-<div class="contenedor">
-
-    <mat-card class="card">
-
-        <mat-card-header>
-            <mat-card-title>IHSS</mat-card-title>
-            <mat-card-subtitle>Instituto hondureño de seguridad social.</mat-card-subtitle>
-            <!-- <img mat-card-sm-image src="../../../assets/img/log.jpg"> -->
-        </mat-card-header>
+    <mat-card>
 
         <mat-card-content>
 
-            <form class="separador mt-2" [formGroup]="formLogin" (ngSubmit)= "validarLogin()">
+            <form [formGroup]="formLogin" (ngSubmit)= "validarLogin()">
 
                 <div class="row">
                 <mat-form-field>
@@ -62,6 +49,3 @@
             
         </mat-card-content>        
     </mat-card>
-
-
-</div>
